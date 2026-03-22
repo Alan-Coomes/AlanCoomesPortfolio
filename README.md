@@ -1,2 +1,2 @@
 # AlanCoomesPortfolio
-Portfolio Websitefor Myself
+Portfolio Website for Myself
