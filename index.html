@@ -286,6 +286,119 @@
     top: 0.25em;
   }
 
+  /* PROJECTS */
+  .project-card {
+    background: var(--card);
+    border: 0.5px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+
+  .project-card:hover { border-color: var(--teal-border); }
+
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--teal);
+  }
+
+  .project-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .project-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.5rem;
+    color: var(--text);
+  }
+
+  .project-type {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--teal);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 0.5px solid var(--teal-border);
+    padding: 0.2rem 0.6rem;
+    border-radius: 3px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .project-desc {
+    font-size: 0.92rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    max-width: 640px;
+  }
+
+  .project-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    list-style: none;
+  }
+
+  .project-features li {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    padding-left: 1rem;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .project-features li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-size: 0.7rem;
+    top: 0.25em;
+  }
+
+  .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-tech-tag {
+    font-size: 0.75rem;
+    color: var(--teal);
+    background: var(--teal-dim);
+    border: 0.5px solid var(--teal-border);
+    border-radius: 3px;
+    padding: 0.2rem 0.55rem;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--teal);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .project-link:hover { color: #0c908b; }
+
   /* EDUCATION */
   .edu-grid {
     display: grid;
@@ -441,6 +554,8 @@
     section { padding: 3.5rem 1.25rem; }
     .hero { padding: 0 1.25rem; }
     .edu-grid, .skills-grid, .contact-grid { grid-template-columns: 1fr; }
+    .project-features { grid-template-columns: 1fr; }
+    .project-header { flex-direction: column; }
     .timeline-item { grid-template-columns: 0 1px 1fr; }
     .timeline-date { display: none; }
   }
@@ -452,6 +567,7 @@
   <span class="nav-logo">Alan Coomes</span>
   <ul class="nav-links">
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -529,11 +645,42 @@
   </div>
 </section>
 
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header">
+    <span class="section-tag">02 / projects</span>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="project-card">
+    <div class="project-header">
+      <div class="project-name">Samala</div>
+      <span class="project-type">E-Commerce</span>
+    </div>
+    <p class="project-desc">A full-stack e-commerce web application built from the ground up. Samala delivers a modern, responsive shopping experience with product browsing, cart management, and a streamlined checkout flow.</p>
+    <ul class="project-features">
+      <li>Product catalog with browsing and search</li>
+      <li>Shopping cart and checkout workflow</li>
+      <li>User authentication and account management</li>
+      <li>Responsive design across all devices</li>
+      <li>Server-side rendering for fast page loads</li>
+      <li>Deployed and hosted on Vercel</li>
+    </ul>
+    <div class="project-tech">
+      <span class="project-tech-tag">TypeScript</span>
+      <span class="project-tech-tag">Next.js</span>
+      <span class="project-tech-tag">React</span>
+      <span class="project-tech-tag">Vercel</span>
+    </div>
+    <a href="https://samala.vercel.app" target="_blank" rel="noopener" class="project-link">View Live Site &rarr;</a>
+  </div>
+</section>
+
 <!-- EDUCATION -->
 <section id="education" style="background: linear-gradient(180deg, transparent, rgba(14,165,160,0.04), transparent); border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border);">
   <div style="max-width: 900px; margin: 0 auto;">
     <div class="section-header">
-      <span class="section-tag">02 / education</span>
+      <span class="section-tag">03 / education</span>
       <div class="section-line"></div>
     </div>
     <div class="edu-grid">
@@ -562,7 +709,7 @@
 <!-- SKILLS -->
 <section id="skills">
   <div class="section-header">
-    <span class="section-tag">03 / skills</span>
+    <span class="section-tag">04 / skills</span>
     <div class="section-line"></div>
   </div>
   <div class="skills-grid">
@@ -612,7 +759,7 @@
 <!-- CONTACT -->
 <section id="contact" style="border-top: 0.5px solid var(--border);">
   <div class="section-header">
-    <span class="section-tag">04 / contact</span>
+    <span class="section-tag">05 / contact</span>
     <div class="section-line"></div>
   </div>
   <div class="contact-grid">
