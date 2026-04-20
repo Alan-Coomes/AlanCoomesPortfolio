@@ -286,6 +286,57 @@
     top: 0.25em;
   }
 
+  /* PROJECTS */
+  .project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    background: var(--card);
+    border: 0.5px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .project-card:hover { border-color: var(--teal); transform: translateY(-2px); }
+
+  .project-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--teal);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .project-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.35rem;
+    color: var(--text);
+  }
+
+  .project-blurb {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    line-height: 1.65;
+  }
+
+  .project-link {
+    margin-top: auto;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--teal);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
   /* EDUCATION */
   .edu-grid {
     display: grid;
@@ -440,7 +491,7 @@
     .nav-links { gap: 1rem; }
     section { padding: 3.5rem 1.25rem; }
     .hero { padding: 0 1.25rem; }
-    .edu-grid, .skills-grid, .contact-grid { grid-template-columns: 1fr; }
+    .edu-grid, .skills-grid, .contact-grid, .project-grid { grid-template-columns: 1fr; }
     .timeline-item { grid-template-columns: 0 1px 1fr; }
     .timeline-date { display: none; }
   }
@@ -452,6 +503,7 @@
   <span class="nav-logo">Alan Coomes</span>
   <ul class="nav-links">
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -529,11 +581,27 @@
   </div>
 </section>
 
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header">
+    <span class="section-tag">02 / projects</span>
+    <div class="section-line"></div>
+  </div>
+  <div class="project-grid">
+    <a href="https://samala.vercel.app/" target="_blank" rel="noopener" class="project-card">
+      <span class="project-tag">Headless E-commerce · Solo Build</span>
+      <div class="project-title">Samala</div>
+      <div class="project-blurb">Designed, built, and shipped the full e-commerce storefront solo for an athleisure brand that donates 10% of proceeds to youth in need. Headless architecture — a Next.js frontend deployed on Vercel wired to Wix for product catalog, inventory, and checkout — powering the SS26 and AW25 seasonal collections.</div>
+      <span class="project-link">Visit site →</span>
+    </a>
+  </div>
+</section>
+
 <!-- EDUCATION -->
 <section id="education" style="background: linear-gradient(180deg, transparent, rgba(14,165,160,0.04), transparent); border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border);">
   <div style="max-width: 900px; margin: 0 auto;">
     <div class="section-header">
-      <span class="section-tag">02 / education</span>
+      <span class="section-tag">03 / education</span>
       <div class="section-line"></div>
     </div>
     <div class="edu-grid">
@@ -562,7 +630,7 @@
 <!-- SKILLS -->
 <section id="skills">
   <div class="section-header">
-    <span class="section-tag">03 / skills</span>
+    <span class="section-tag">04 / skills</span>
     <div class="section-line"></div>
   </div>
   <div class="skills-grid">
@@ -612,7 +680,7 @@
 <!-- CONTACT -->
 <section id="contact" style="border-top: 0.5px solid var(--border);">
   <div class="section-header">
-    <span class="section-tag">04 / contact</span>
+    <span class="section-tag">05 / contact</span>
     <div class="section-line"></div>
   </div>
   <div class="contact-grid">
